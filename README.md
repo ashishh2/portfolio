@@ -17,13 +17,11 @@ The project follows a modular architecture to separate concerns (Single Responsi
 ```text
 portfolio-2025/
 ├── public/                 # Static assets (images, profile.jpg)
-├── src/
-│   ├── app/
-│   │   ├── globals.css     # Global styles & Tailwind directives
-│   │   ├── layout.tsx      # Root layout (Fonts, Background Mesh)
-│   │   └── page.tsx        # Main page composition
-│   │
-│   ├── components/
+├── app/
+│   ├── globals.css         # Global styles & Tailwind directives
+│   ├── layout.tsx          # Root layout (Fonts, Background Mesh)
+│   └── page.tsx            # Main page composition
+├── src/components/
 │   │   ├── sections/       # Major page sections (Business Logic + UI)
 │   │   │   ├── Hero.tsx
 │   │   │   ├── Experience.tsx
