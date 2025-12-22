@@ -15,7 +15,7 @@ A high-performance, interactive portfolio website built with **Next.js 14**, **T
 The project follows a modular architecture to separate concerns (Single Responsibility Principle).
 
 ```text
-portfolio-2025/
+portfolio/
 ├── public/                 # Static assets (images, profile.jpg)
 ├── app/
 │   ├── globals.css         # Global styles & Tailwind directives
