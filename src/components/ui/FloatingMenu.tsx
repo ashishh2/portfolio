@@ -1,11 +1,12 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Home, Briefcase, Code2, Trophy, Mail } from 'lucide-react';
+import { Home, Briefcase, Code2, GraduationCap, Trophy, Mail } from 'lucide-react';
 
 export const FloatingMenu = () => {
   const menuItems = [
     { icon: <Home size={20} />, label: 'Home', href: '#' },
     { icon: <Briefcase size={20} />, label: 'Experience', href: '#work' },
+    { icon: <GraduationCap size={20} />, label: 'Education', href: '#education' },
     { icon: <Code2 size={20} />, label: 'Projects', href: '#projects' },
     { icon: <Trophy size={20} />, label: 'Awards', href: '#achievements' },
     { icon: <Mail size={20} />, label: 'Contact', href: '#contact' },

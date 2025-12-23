@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar } from 'lucide-react';
 
+// ... (interfaces remain the same) ...
 interface Role {
   title: string;
   period: string;
@@ -65,14 +66,15 @@ export const Experience = () => {
   return (
     <section id="work" className="py-24 relative bg-brand-navy/20 border-t border-white/5">
       <div className="container mx-auto px-6">
+        {/* FIX: Centered on mobile */}
         <motion.h2 
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-white mb-12 md:mb-16 flex items-center"
+          className="text-3xl font-bold text-white mb-12 md:mb-16 flex items-center justify-center md:justify-start"
         >
           <Briefcase className="w-8 h-8 mr-4 text-brand-blue" />
-          Professional Experience
+          Experience
         </motion.h2>
 
         <div className="space-y-12">
@@ -85,13 +87,11 @@ export const Experience = () => {
               transition={{ delay: companyIndex * 0.2 }}
               className="relative"
             >
-              {/* FIX: Vertical Timeline Line - Moved here to span full height */}
-              {/* Positioned at left-6 (24px) to center with w-12 logo */}
+              {/* Vertical Timeline Line */}
               <div className="absolute left-6 top-0 bottom-0 w-px bg-slate-700 -z-10 hidden md:block transform -translate-x-1/2"></div>
 
               {/* Company Header */}
               <div className="flex items-center gap-4 mb-6 relative z-10">
-                 {/* Logo & Name */}
                  <div className="flex items-center gap-4">
                     {exp.logo}
                     <div>
@@ -106,8 +106,7 @@ export const Experience = () => {
                 {exp.roles.map((role, roleIndex) => (
                   <div key={roleIndex} className="relative">
                     
-                    {/* FIX: Role Node Dot */}
-                    {/* Aligned specifically to intersect the main vertical line at left-6 */}
+                    {/* Role Node Dot */}
                     <div className="hidden md:block absolute -left-[3.85rem] top-2 w-3 h-3 rounded-full bg-brand-cyan border-2 border-brand-dark shadow-[0_0_10px_rgba(6,182,212,0.5)] z-20"></div>
 
                     {/* Role Header */}

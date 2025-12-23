@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Code2, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { Code2, ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
@@ -21,16 +21,20 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-24 border-t border-white/5">
+    <section 
+      id="projects" 
+      className="py-24 bg-brand-navy/20 border-t border-white/5"
+    >
       <div className="container mx-auto px-6">
+        {/* FIX: Added 'justify-center md:justify-start' */}
         <motion.h2 
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-white mb-12 flex items-center"
+          className="text-3xl font-bold text-white mb-12 flex items-center justify-center md:justify-start"
         >
           <Code2 className="w-8 h-8 mr-4 text-brand-cyan" />
-          Featured Projects
+          Projects
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -43,10 +47,8 @@ export const Projects = () => {
               transition={{ delay: index * 0.2 }}
               className="group glass-card rounded-2xl p-8 relative overflow-hidden hover:-translate-y-2 transition-all duration-300"
             >
-              {/* Hover Glow Effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-brand-blue to-brand-cyan opacity-0 group-hover:opacity-20 blur transition-opacity duration-500" />
               
-              {/* Content */}
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-4">
                   <div>
