@@ -21,7 +21,7 @@ const experiences: CompanyExperience[] = [
     company: "Salesforce",
     location: "Bangalore, India",
     logo: (
-      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative z-10">
+      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative z-10 border border-slate-100 shadow-sm">
         <img 
           src="/salesforce.svg" 
           alt="Salesforce Logo" 
@@ -59,7 +59,7 @@ const experiences: CompanyExperience[] = [
     company: "Gameskraft",
     location: "Bangalore, India",
     logo: (
-      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative z-10">
+      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative z-10 border border-slate-100 shadow-sm">
         <img 
           src="/gameskraft.png" 
           alt="Gameskraft Logo" 
@@ -91,7 +91,7 @@ const experiences: CompanyExperience[] = [
     company: "Arcesium",
     location: "Hyderabad, India",
     logo: (
-      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative z-10">
+      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative z-10 border border-slate-100 shadow-sm">
         <img 
           src="/arcesium.png" 
           alt="Arcesium Logo" 
@@ -115,13 +115,22 @@ const experiences: CompanyExperience[] = [
 
 export const Experience = () => {
   return (
-    <section id="work" className="py-24 relative bg-brand-navy/20 border-t border-white/5">
-      <div className="container mx-auto px-6">
+    <section 
+      id="work" 
+      // FIX 3: Changed py-24 to 'py-12 md:py-24' to reduce gap on mobile
+      className="py-12 md:py-24 relative overflow-hidden"
+    >
+        <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
+            <div className="absolute top-[5%] left-[-5%] w-[600px] h-[600px] rounded-full bg-blue-100/40 blur-[120px]" />
+            <div className="absolute top-[40%] right-[-10%] w-[500px] h-[500px] rounded-full bg-cyan-100/40 blur-[100px]" />
+        </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.h2 
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-white mb-12 md:mb-16 flex items-center justify-center md:justify-start"
+          className="text-3xl font-bold text-slate-900 mb-12 md:mb-16 flex items-center justify-center md:justify-start"
         >
           <Briefcase className="w-8 h-8 mr-4 text-brand-blue" />
           Experience
@@ -137,47 +146,40 @@ export const Experience = () => {
               transition={{ delay: companyIndex * 0.2 }}
               className="relative"
             >
-              {/* Vertical Timeline Line */}
-              <div className="absolute left-6 top-0 bottom-0 w-px bg-slate-700 -z-10 hidden md:block transform -translate-x-1/2"></div>
+              <div className="absolute left-6 top-0 bottom-0 w-px bg-slate-300 -z-10 hidden md:block transform -translate-x-1/2"></div>
 
-              {/* Company Header */}
               <div className="flex items-center gap-4 mb-6 relative z-10">
                  <div className="flex items-center gap-4">
                     {exp.logo}
                     <div>
-                        <h3 className="text-xl md:text-2xl font-bold text-white">{exp.company}</h3>
+                        <h3 className="text-xl md:text-2xl font-bold text-slate-900">{exp.company}</h3>
                         <p className="text-slate-500 text-sm">{exp.location}</p>
                     </div>
                  </div>
               </div>
 
-              {/* Roles Container */}
               <div className="space-y-8 md:space-y-10 pl-2 md:pl-20 relative">
                 {exp.roles.map((role, roleIndex) => (
                   <div key={roleIndex} className="relative">
                     
-                    {/* Role Node Dot */}
-                    <div className="hidden md:block absolute -left-[3.85rem] top-2 w-3 h-3 rounded-full bg-brand-cyan border-2 border-brand-dark shadow-[0_0_10px_rgba(6,182,212,0.5)] z-20"></div>
+                    <div className="hidden md:block absolute -left-[3.85rem] top-2 w-3 h-3 rounded-full bg-white border-[3px] border-brand-blue shadow-sm z-20"></div>
 
-                    {/* Role Header */}
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
                       <div>
-                        <h4 className="text-lg font-semibold text-slate-200">{role.title}</h4>
+                        <h4 className="text-lg font-bold text-slate-800">{role.title}</h4>
                       </div>
                       
-                      <div className="self-start md:self-auto flex items-center text-slate-300 text-xs md:text-sm bg-white/5 px-3 py-1 rounded-full border border-white/5">
+                      <div className="self-start md:self-auto flex items-center text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 text-xs md:text-sm whitespace-nowrap">
                         <Calendar size={14} className="mr-2" />
                         {role.period}
                       </div>
                     </div>
 
-                    {/* Work Description Card */}
-                    <div className="glass-card p-4 md:p-6 rounded-xl hover:bg-white/5 transition-colors group">
+                    <div className="p-4 md:p-6 rounded-xl bg-white border border-blue-100 shadow-md group">
                       <ul className="space-y-3">
                         {role.description.map((item, i) => (
-                          <li key={i} className="flex items-start text-slate-300 text-sm leading-relaxed">
-                            {/* FIX: Removed 'bg-brand-blue/50' and 'group-hover:...'. Now it's solid brand-blue by default. */}
-                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-blue shrink-0"></span>
+                          <li key={i} className="flex items-start text-slate-600 text-sm leading-relaxed">
+                            <span className="mt-2 mr-3 min-w-[6px] h-1.5 rounded-full bg-slate-400 shrink-0"></span>
                             <span>{item}</span>
                           </li>
                         ))}

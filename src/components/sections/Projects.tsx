@@ -1,21 +1,31 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Code2, ArrowUpRight } from 'lucide-react';
+import { Github, Code2 } from 'lucide-react';
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  github?: string;
+}
+
+const projects: Project[] = [
   {
-    title: "Distributed Cache Layer",
-    category: "Infrastructure",
-    description: "A custom caching solution built to handle burst traffic during peak retail hours. Implemented consistent hashing and LRU eviction policies.",
-    tags: ["Java", "Redis", "AWS"],
-    link: "#"
+    title: "Cultural Bias Analyzer for LLMs",
+    description: "An analytical tool leveraging the Gemini API to quantify and visualize cultural biases in Large Language Models. Features a Python-based pipeline for prompt generation, response analysis, and bias scoring across varying demographic contexts.",
+    tech: ["Python", "Gemini API", "Pandas", "Data Visualization", "NLP"],
+    github: "https://github.com/yourusername/bias-analyzer",
   },
   {
-    title: "Predictive Logistics Engine",
-    category: "AI / ML",
-    description: "Machine learning pipeline to predict shipping delays. Integrated with existing ERPs to provide real-time dashboard analytics.",
-    tags: ["Python", "TensorFlow", "Docker"],
-    link: "#"
+    title: "ML-Powered Network Intrusion Detection",
+    description: "A robust NIDS capable of detecting malicious network traffic in real-time. Utilizes ensemble learning techniques and Scikit-learn to classify packet signatures with 98% accuracy, reducing false positives significantly.",
+    tech: ["Python", "Scikit-learn", "Jupyter", "Network Security", "ML"],
+    github: "https://github.com/yourusername/nids-project", 
+  },
+  {
+    title: "Customer Signals Intelligence (CSI)",
+    description: "The architectural backbone for Salesforce's signal extraction platform. Unifies diverse interaction data streams to generate actionable insights using distributed microservices and real-time Kafka pipelines.",
+    tech: ["Java", "Spring Boot", "Kafka", "Docker", "Kubernetes"],
   }
 ];
 
@@ -23,19 +33,35 @@ export const Projects = () => {
   return (
     <section 
       id="projects" 
-      className="py-24 bg-brand-navy/20 border-t border-white/5"
+      className="py-12 md:py-24 relative overflow-hidden"
     >
-      <div className="container mx-auto px-6">
+        {/* FIX: Centered Hue Positions
+            - Top buffer (~25%) is white -> Smooth transition from Education
+            - Bottom buffer (~30%) is white -> Smooth transition to Achievements
+            - Blobs float safely in the middle vertical band
+        */}
+        <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
+            {/* Blob 1: Center-Left (Blue) */}
+            <div className="absolute top-[25%] left-[-5%] w-[600px] h-[600px] rounded-full bg-blue-100/40 blur-[120px]" />
+            
+            {/* Blob 2: Center-Right (Cyan) */}
+            <div className="absolute top-[35%] right-[-5%] w-[500px] h-[500px] rounded-full bg-cyan-100/40 blur-[100px]" />
+        </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        
+        {/* Section Header */}
         <motion.h2 
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-white mb-12 flex items-center justify-center md:justify-start"
+          className="text-3xl font-bold text-slate-900 mb-12 flex items-center justify-center md:justify-start"
         >
-          <Code2 className="w-8 h-8 mr-4 text-brand-cyan" />
-          Projects
+          <Code2 className="w-8 h-8 mr-4 text-brand-blue" />
+          Featured Projects
         </motion.h2>
 
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -43,37 +69,46 @@ export const Projects = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              className="group glass-card rounded-2xl p-8 relative overflow-hidden hover:-translate-y-2 transition-all duration-300"
+              transition={{ delay: index * 0.1 }}
+              className="group relative h-full flex flex-col bg-white/70 backdrop-blur-xl rounded-2xl p-8 border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-transform duration-300 hover:-translate-y-2"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-brand-blue to-brand-cyan opacity-0 group-hover:opacity-20 blur transition-opacity duration-500" />
               
-              <div className="relative z-10">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-brand-cyan mb-2 block">
-                      {project.category}
-                    </span>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-brand-blue transition-colors">
-                      {project.title}
-                    </h3>
-                  </div>
-                  <a href={project.link} className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors">
-                    <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-white" />
+              {/* Card Header: Title & Github Link */}
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-brand-blue transition-colors pr-4">
+                    {project.title}
+                </h3>
+
+                {project.github && (
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="text-slate-400 hover:text-slate-900 transition-colors shrink-0"
+                  >
+                    <Github size={22} />
                   </a>
-                </div>
+                )}
+              </div>
 
-                <p className="text-slate-400 mb-6 line-clamp-3">
-                  {project.description}
-                </p>
+              {/* Description */}
+              <p className="text-slate-600 text-sm leading-relaxed flex-grow">
+                {project.description}
+              </p>
 
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 text-xs rounded-full bg-slate-800 text-slate-300 border border-slate-700">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+              {/* Divider Line */}
+              <div className="h-px bg-slate-200 my-6 w-full border-0"></div>
+
+              {/* Tech Stack Tags */}
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {project.tech.map((tech) => (
+                  <span 
+                    key={tech} 
+                    className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </motion.div>
           ))}

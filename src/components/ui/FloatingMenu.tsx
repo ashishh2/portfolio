@@ -27,29 +27,41 @@ export const FloatingMenu = () => {
 
   return (
     <motion.nav 
-      // FIX: Changed y: 100 (from bottom) to y: -100 (from top)
       initial={{ y: -100, x: "-50%", opacity: 0 }}
       animate={{ y: 0, x: "-50%", opacity: 1 }}
       transition={{ delay: 0.5, type: "spring", stiffness: 260, damping: 20 }}
-      // FIX: Changed 'bottom-8' to 'top-6'
-      className="fixed top-6 left-1/2 z-50"
+      className="fixed left-1/2 z-50 bottom-6 md:top-6 md:bottom-auto"
     >
-      <div className="glass-card flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 shadow-2xl bg-brand-dark/80 backdrop-blur-xl">
+      {/* GLASSMORPHISM UPDATE:
+          1. bg-white/10: Very transparent to let background blobs show through.
+          2. backdrop-blur-md: Frosted glass effect.
+          3. border-white/20: Subtle glass edge.
+      */}
+      <div className="flex items-center gap-1 md:gap-2 px-3 py-2 md:px-4 rounded-full 
+                      bg-white/10 backdrop-blur-md 
+                      border border-white/20 ring-1 ring-black/5
+                      shadow-[0_8px_32px_rgba(0,0,0,0.1)]">
+        
         {menuItems.map((item) => (
           <a 
             key={item.label}
             href={item.href}
             onClick={(e) => handleScroll(e, item.href)}
-            className="group relative p-3 rounded-full hover:bg-white/10 transition-colors cursor-pointer"
+            className="group relative p-2 md:p-3 rounded-full hover:bg-white/20 transition-all duration-300 cursor-pointer"
             aria-label={item.label}
           >
-            <span className="text-slate-400 group-hover:text-brand-blue transition-colors">
+            {/* Icon */}
+            <span className="text-slate-600 group-hover:text-blue-600 group-hover:scale-110 transition-all duration-300 block">
               {item.icon}
             </span>
             
-            {/* Tooltip - Now appears BELOW the menu since the menu is at the top */}
-            <span className="absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-brand-navy border border-white/10 rounded text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+            {/* Tooltip */}
+            <span className="absolute left-1/2 -translate-x-1/2 px-2 py-1 bg-slate-800 text-white text-[10px] md:text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap
+                             bottom-[120%] mb-2 md:bottom-auto md:mb-0 md:top-[120%] md:mt-2 shadow-lg">
               {item.label}
+              {/* Tooltip Arrow */}
+              <span className="absolute left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-800 rotate-45
+                               -bottom-1 md:-top-1 md:bottom-auto"></span>
             </span>
           </a>
         ))}
