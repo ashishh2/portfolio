@@ -23,11 +23,12 @@ portfolio/
 │   └── page.tsx            # Main page composition
 ├── src/components/
 │   │   ├── sections/       # Major page sections (Business Logic + UI)
-│   │   │   ├── Hero.tsx
-│   │   │   ├── Experience.tsx
-│   │   │   ├── Projects.tsx
 │   │   │   ├── Achievements.tsx
-│   │   │   └── Contact.tsx
+│   │   │   ├── Contact.tsx
+│   │   │   ├── Education.tsx
+│   │   │   ├── Experience.tsx
+│   │   │   ├── Hero.tsx
+│   │   │   └── Projects.tsx
 │   │   │
 │   │   └── ui/             # Reusable atomic components
 │   │       ├── FloatingMenu.tsx

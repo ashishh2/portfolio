@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Trophy, Award, Target, Zap } from 'lucide-react';
+import { Trophy, Calendar, Target, Zap, Award } from 'lucide-react';
 
 const stats = [
   { label: "Years Experience", value: "4+", icon: <Calendar size={24} className="text-brand-blue" /> },
@@ -9,7 +9,7 @@ const stats = [
   { label: "Users Impacted", value: "1M+", icon: <Award size={24} className="text-brand-cyan" /> },
 ];
 
-const achievements = [
+const achievementsData = [
   {
     title: "Salesforce Innovation Award",
     category: "Workplace Excellence",
@@ -30,26 +30,26 @@ const achievements = [
   }
 ];
 
-// Helper component for Icon (since we need it in the stats array)
-import { Calendar } from 'lucide-react';
-
 export const Achievements = () => {
   return (
-    <section id="achievements" className="py-24 bg-brand-navy/20 border-t border-white/5 relative">
+    <section 
+      id="achievements" 
+      className="py-24 border-t border-white/5 relative"
+    >
       <div className="container mx-auto px-6">
         
-        {/* Section Header */}
+        {/* FIX: Added 'justify-center md:justify-start' */}
         <motion.h2 
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-white mb-16 flex items-center"
+          className="text-3xl font-bold text-white mb-16 flex items-center justify-center md:justify-start"
         >
           <Trophy className="w-8 h-8 mr-4 text-brand-blue" />
           Achievements
         </motion.h2>
 
-        {/* 1. Key Metrics Grid */}
+        {/* Key Metrics Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
             <motion.div
@@ -69,9 +69,9 @@ export const Achievements = () => {
           ))}
         </div>
 
-        {/* 2. Detailed Achievements List */}
+        {/* Detailed Achievements List */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {achievements.map((item, index) => (
+          {achievementsData.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -80,7 +80,6 @@ export const Achievements = () => {
               transition={{ delay: 0.2 + (index * 0.1) }}
               className="relative pl-8 border-l-2 border-brand-blue/30 hover:border-brand-blue transition-colors group"
             >
-              {/* Dot Indicator */}
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-brand-dark border-2 border-brand-blue/30 group-hover:border-brand-blue transition-colors"></div>
               
               <div className="flex justify-between items-center mb-2">
