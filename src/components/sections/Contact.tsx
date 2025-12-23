@@ -67,12 +67,6 @@ export const Contact = () => {
                         <Mail size={24} className="group-hover:text-brand-blue transition-colors" />
                     </a>
                 </div>
-
-                {/* <div className="pt-12 border-t border-white/5 w-full max-w-xs mx-auto">
-                    <p className="text-xs text-slate-600">
-                        Last Updated: December 2025. <br/>
-                    </p>
-                </div> */}
             </motion.div>
         </div>
       </div>

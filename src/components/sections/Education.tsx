@@ -84,7 +84,8 @@ export const Education = () => {
                 
                 {/* Technical Excellence & Leadership */}
                 <div>
-                    <h4 className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wider mb-3 flex items-center">
+                    {/* FIX: Changed text-slate-500 to text-slate-200 (Brighter) */}
+                    <h4 className="text-xs md:text-sm font-bold text-slate-200 uppercase tracking-wider mb-3 flex items-center">
                         <Award size={16} className="mr-2 text-brand-cyan" />
                         Technical Excellence and Leadership
                     </h4>
@@ -92,13 +93,15 @@ export const Education = () => {
                     {/* Bullet Points */}
                     <ul className="space-y-3">
                         <li className="flex items-start text-slate-300 text-sm md:text-base leading-relaxed">
-                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-cyan/50 shrink-0"></span>
+                            {/* FIX: Removed /50 opacity. Now solid bg-brand-cyan. */}
+                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-cyan shrink-0"></span>
                             <span>
                                 Demonstrated advanced proficiency in data structures and algorithms by representing institute five-times at <strong>ICPC Regionals</strong>.
                             </span>
                         </li>
                         <li className="flex items-start text-slate-300 text-sm md:text-base leading-relaxed">
-                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-cyan/50 shrink-0"></span>
+                            {/* FIX: Removed /50 opacity. */}
+                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-cyan shrink-0"></span>
                             <span>
                                 Served as the <strong className="text-white">Technical Secretary</strong> of the PCON (Programming Club of NIT Jamshedpur), leading a 30+ member team to conceptualize and deliver technical workshops, competitive programming contests, and hackathons.
                             </span>
@@ -108,7 +111,8 @@ export const Education = () => {
 
                 {/* Coursework */}
                 <div>
-                    <h4 className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-wider mb-3 flex items-center">
+                    {/* FIX: Changed text-slate-500 to text-slate-200 (Brighter) */}
+                    <h4 className="text-xs md:text-sm font-bold text-slate-200 uppercase tracking-wider mb-3 flex items-center">
                         <BookOpen size={16} className="mr-2 text-brand-blue" />
                         Coursework
                     </h4>
@@ -171,11 +175,13 @@ export const Education = () => {
                     
                     <ul className="space-y-3">
                         <li className="flex items-start text-slate-300 text-sm md:text-base leading-relaxed">
-                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-cyan/50 shrink-0"></span>
+                            {/* FIX: Removed /50 opacity. */}
+                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-cyan shrink-0"></span>
                             <span>Recipient of the <strong className="text-white">Principal’s Award</strong> in recognition of outstanding holistic performance across academic and co-curricular pursuits.</span>
                         </li>
                         <li className="flex items-start text-slate-300 text-sm md:text-base leading-relaxed">
-                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-cyan/50 shrink-0"></span>
+                            {/* FIX: Removed /50 opacity. */}
+                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-cyan shrink-0"></span>
                             Attained a perfect 100/100 score in core technical subjects: Computer Science and Mathematics.
                         </li>
                     </ul>
@@ -206,11 +212,13 @@ export const Education = () => {
 
                     <ul className="space-y-3">
                         <li className="flex items-start text-slate-300 text-sm md:text-base leading-relaxed">
-                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-cyan/50 shrink-0"></span>
+                            {/* FIX: Removed /50 opacity. */}
+                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-cyan shrink-0"></span>
                             <span>School Topper and ranked among the <strong className="text-white">Top 1%</strong> of candidates nationwide for academic performance.</span>
                         </li>
                         <li className="flex items-start text-slate-300 text-sm md:text-base leading-relaxed">
-                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-cyan/50 shrink-0"></span>
+                            {/* FIX: Removed /50 opacity. */}
+                            <span className="mt-1.5 mr-3 min-w-[6px] h-1.5 rounded-full bg-brand-cyan shrink-0"></span>
                             Secured top honors in multiple inter-school debates and quizzes, demonstrating exceptional public speaking and critical thinking abilities.
                         </li>
                     </ul>

@@ -26,7 +26,6 @@ export const Projects = () => {
       className="py-24 bg-brand-navy/20 border-t border-white/5"
     >
       <div className="container mx-auto px-6">
-        {/* FIX: Added 'justify-center md:justify-start' */}
         <motion.h2 
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
