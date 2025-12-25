@@ -94,7 +94,7 @@ export const Education = () => {
                 {/* Technical Excellence */}
                 <div>
                     <h4 className="text-xs md:text-sm font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center">
-                        <Award size={16} className="mr-2 text-slate-900" />
+                        <Award size={16} className="mr-2 text-brand-blue" />
                         Technical Excellence and Leadership
                     </h4>
                     

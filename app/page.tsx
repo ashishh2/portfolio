@@ -5,12 +5,13 @@ import { Projects } from "@/components/sections/Projects";
 import { Achievements } from "@/components/sections/Achievements";
 import { Contact } from "@/components/sections/Contact";
 import { FloatingMenu } from "@/components/ui/FloatingMenu";
+import { ExperienceV2 } from "@/components/sections/ExperienceV2";
 
 export default function Home() {
   return (
     <div className="relative pb-24">
       <Hero />
-      <Experience />
+      <ExperienceV2 />
       <Education /> {/* MOVED UP: Now sits between Experience and Projects */}
       <Projects />
       <Achievements />
