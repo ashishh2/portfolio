@@ -23,7 +23,7 @@ const experiences: CompanyExperience[] = [
     logo: (
       <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative z-10 border border-slate-100 shadow-sm">
         <img 
-          src="/salesforce.svg" 
+          src="./salesforce.svg" 
           alt="Salesforce Logo" 
           className="w-full h-full object-contain p-1"
         />
@@ -61,7 +61,7 @@ const experiences: CompanyExperience[] = [
     logo: (
       <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative z-10 border border-slate-100 shadow-sm">
         <img 
-          src="/gameskraft.png" 
+          src="./gameskraft.png" 
           alt="Gameskraft Logo" 
           className="w-full h-full object-contain p-1"
         />
@@ -93,7 +93,7 @@ const experiences: CompanyExperience[] = [
     logo: (
       <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative z-10 border border-slate-100 shadow-sm">
         <img 
-          src="/arcesium.png" 
+          src="./arcesium.png" 
           alt="Arcesium Logo" 
           className="w-full h-full object-contain p-1"
         />
@@ -117,7 +117,6 @@ export const Experience = () => {
   return (
     <section 
       id="work" 
-      // FIX 3: Changed py-24 to 'py-12 md:py-24' to reduce gap on mobile
       className="py-12 md:py-24 relative overflow-hidden"
     >
         <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">

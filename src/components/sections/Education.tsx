@@ -28,7 +28,6 @@ export const Education = () => {
   return (
     <section 
       id="education" 
-      // FIX: Changed to 'py-12 md:py-24' to reduce gap on mobile
       className="py-12 md:py-24 relative overflow-hidden" 
     >
         {/* Background Blobs */}
@@ -74,12 +73,10 @@ export const Education = () => {
                     </span>
                     
                     <div className="flex items-center gap-2">
-                        {/* STEP 1: Deep Blue (Start) */}
                         <span className="flex items-center text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200 whitespace-nowrap">
                             <Calendar size={12} className="mr-1.5" />
                             2019 - 2023
                         </span>
-                        {/* STEP 3: Cyan (End) */}
                         <span className="flex items-center text-cyan-700 bg-cyan-50 px-2 py-0.5 rounded-full border border-cyan-200 whitespace-nowrap">
                             <Hash size={12} className="mr-1.5" />
                             CGPA: 8.69 / 10.0
@@ -161,17 +158,14 @@ export const Education = () => {
                         <h4 className="text-lg md:text-xl font-bold text-slate-900">Class 12th</h4>
                         
                         <div className="flex items-center gap-2">
-                            {/* STEP 1: Board -> Blue-700 */}
                             <span className="flex items-center text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200 text-[10px] md:text-xs font-medium whitespace-nowrap">
                                 <BookOpen size={10} className="mr-1" /> ISC
                             </span>
 
-                            {/* STEP 2: Year -> Sky-600 (Middle Transition) */}
                             <span className="flex items-center text-sky-600 bg-sky-50 px-2 py-0.5 rounded-full border border-sky-200 text-[10px] md:text-xs font-medium whitespace-nowrap">
                                 <Calendar size={10} className="mr-1" /> 2019
                             </span>
                             
-                            {/* STEP 3: Score -> Cyan-600 (End) */}
                             <span className="flex items-center text-cyan-600 bg-cyan-50 px-2 py-0.5 rounded-full border border-cyan-200 text-[10px] md:text-xs font-medium whitespace-nowrap">
                                 <Hash size={10} className="mr-1" /> 97.5%
                             </span>
@@ -196,17 +190,14 @@ export const Education = () => {
                         <h4 className="text-lg md:text-xl font-bold text-slate-900">Class 10th</h4>
                         
                         <div className="flex items-center gap-2">
-                            {/* STEP 1: Blue */}
                             <span className="flex items-center text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200 text-[10px] md:text-xs font-medium whitespace-nowrap">
                                 <BookOpen size={10} className="mr-1" /> ICSE
                             </span>
 
-                            {/* STEP 2: Sky */}
                             <span className="flex items-center text-sky-600 bg-sky-50 px-2 py-0.5 rounded-full border border-sky-200 text-[10px] md:text-xs font-medium whitespace-nowrap">
                                 <Calendar size={10} className="mr-1" /> 2017
                             </span>
                             
-                            {/* STEP 3: Cyan */}
                             <span className="flex items-center text-cyan-600 bg-cyan-50 px-2 py-0.5 rounded-full border border-cyan-200 text-[10px] md:text-xs font-medium whitespace-nowrap">
                                 <Hash size={10} className="mr-1" /> 97%
                             </span>
