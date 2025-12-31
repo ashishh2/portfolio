@@ -9,15 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Semantic Backgrounds/Text
+        page: 'rgb(var(--bg-page) / <alpha-value>)',
+        card: 'rgb(var(--bg-card) / <alpha-value>)',
+        main: 'rgb(var(--text-main) / <alpha-value>)',
+        muted: 'rgb(var(--text-muted) / <alpha-value>)',
+        
+        // Brand Colors (Now mapped to CSS variables)
         brand: {
-          dark: '#0f172a', // Slate 900
-          navy: '#1e293b', // Slate 800
-          blue: '#3b82f6', // Blue 500
-          cyan: '#06b6d4', // Cyan 500
+          blue: 'rgb(var(--accent-primary) / <alpha-value>)',      
+          cyan: 'rgb(var(--accent-secondary) / <alpha-value>)',
+          // Mapped specifically for 'bg-brand-dark' usage if any remains
+          dark: 'rgb(var(--bg-page) / <alpha-value>)', 
         }
       },
       backgroundImage: {
-        'mesh-gradient': 'radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.15) 0px, transparent 50%)',
+        // Updated Gradient to use the variables
+        'mesh-gradient': 'radial-gradient(at 0% 0%, rgb(var(--accent-primary) / 0.1) 0px, transparent 50%), radial-gradient(at 100% 0%, rgb(var(--accent-secondary) / 0.1) 0px, transparent 50%)',
       }
     },
   },

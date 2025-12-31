@@ -6,10 +6,17 @@ export const Contact = () => {
   return (
     <section 
       id="contact" 
-      className="py-24 relative overflow-hidden border-t border-white/10 bg-brand-dark"
+      // FIX: Changed 'py-12' to 'pt-12 pb-32' to create clearance for the FloatingMenu on mobile
+      className="pt-12 pb-32 md:py-24 relative overflow-hidden"
     >
-        {/* Background Mesh for depth */}
-        <div className="absolute inset-0 bg-mesh-gradient opacity-20 pointer-events-none"></div>
+        {/* Background Blobs */}
+        <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
+             {/* Blob 1: Bottom Left (Blue) */}
+            <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full bg-blue-100/40 blur-[100px]" />
+            
+            {/* Blob 2: Bottom Right (Cyan) */}
+            <div className="absolute bottom-[-20%] right-[-10%] w-[300px] h-[300px] rounded-full bg-cyan-100/40 blur-[80px]" />
+        </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -21,12 +28,16 @@ export const Contact = () => {
                 viewport={{ once: true }}
                 className="mb-12"
             >
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                    Let's build something <span className="text-gradient">scalable.</span>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+                    Let's build something<br className="md:hidden" />
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 ml-2">
+                        scalable.
+                    </span>
                 </h2>
-                <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-                    Currently open to new opportunities in backend engineering and system architecture. 
-                    Feel free to reach out directly via email or social media.
+                
+                <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                    Always happy to chat about Backend Engineering, System Architecture, and Applied Generative AI. 
+                    Feel free to reach out directly via email or linkedin.
                 </p>
             </motion.div>
 
@@ -39,40 +50,37 @@ export const Contact = () => {
                 className="flex flex-col items-center space-y-8"
             >
                 <div className="flex gap-6">
+                    {/* Github */}
                     <a 
-                        href="https://github.com" 
+                        href="https://github.com/ashishh2" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="group p-4 glass-card rounded-full text-slate-400 hover:text-white hover:bg-white/10 hover:border-brand-blue/30 transition-all hover:-translate-y-2"
+                        className="p-4 bg-white rounded-full text-slate-600 shadow-md border border-slate-100 hover:text-blue-600 hover:border-blue-100 hover:-translate-y-1 transition-all duration-300"
                         aria-label="GitHub"
                     >
-                        <Github size={24} className="group-hover:text-brand-blue transition-colors" />
+                        <Github size={24} />
                     </a>
                     
+                    {/* LinkedIn */}
                     <a 
-                        href="https://linkedin.com" 
+                        href="https://www.linkedin.com/in/ashishh2/" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="group p-4 glass-card rounded-full text-slate-400 hover:text-white hover:bg-white/10 hover:border-brand-blue/30 transition-all hover:-translate-y-2"
+                        className="p-4 bg-white rounded-full text-slate-600 shadow-md border border-slate-100 hover:text-blue-600 hover:border-blue-100 hover:-translate-y-1 transition-all duration-300"
                         aria-label="LinkedIn"
                     >
-                        <Linkedin size={24} className="group-hover:text-brand-blue transition-colors" />
+                        <Linkedin size={24} />
                     </a>
                     
+                    {/* Email */}
                     <a 
-                        href="mailto:hello@email.com" 
-                        className="group p-4 glass-card rounded-full text-slate-400 hover:text-white hover:bg-white/10 hover:border-brand-blue/30 transition-all hover:-translate-y-2"
+                        href="mailto:aashishh081@gmail.com" 
+                        className="p-4 bg-white rounded-full text-slate-600 shadow-md border border-slate-100 hover:text-blue-600 hover:border-blue-100 hover:-translate-y-1 transition-all duration-300"
                         aria-label="Email"
                     >
-                        <Mail size={24} className="group-hover:text-brand-blue transition-colors" />
+                        <Mail size={24} />
                     </a>
                 </div>
-
-                {/* <div className="pt-12 border-t border-white/5 w-full max-w-xs mx-auto">
-                    <p className="text-xs text-slate-600">
-                        Last Updated: December 2025. <br/>
-                    </p>
-                </div> */}
             </motion.div>
         </div>
       </div>
