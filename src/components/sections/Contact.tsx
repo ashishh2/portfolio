@@ -6,15 +6,11 @@ export const Contact = () => {
   return (
     <section 
       id="contact" 
-      // FIX: Changed 'py-12' to 'pt-12 pb-32' to create clearance for the FloatingMenu on mobile
       className="pt-12 pb-32 md:py-24 relative overflow-hidden"
     >
         {/* Background Blobs */}
         <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
-             {/* Blob 1: Bottom Left (Blue) */}
             <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full bg-blue-100/40 blur-[100px]" />
-            
-            {/* Blob 2: Bottom Right (Cyan) */}
             <div className="absolute bottom-[-20%] right-[-10%] w-[300px] h-[300px] rounded-full bg-cyan-100/40 blur-[80px]" />
         </div>
 

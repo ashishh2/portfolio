@@ -36,7 +36,7 @@ export const Hero = () => {
 
                     <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-[6px] border-white shadow-2xl overflow-hidden bg-slate-100">
                          <img
-                            src="/profile.jpeg"
+                            src="./profile.jpeg"
                             alt="Profile"
                             className="w-full h-full object-cover"
                          />

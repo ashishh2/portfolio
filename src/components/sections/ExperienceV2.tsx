@@ -25,7 +25,7 @@ const experiences: CompanyExperience[] = [
     layout: "list",
     logo: (
       <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative z-10 border border-slate-100 shadow-sm">
-        <img src="/salesforce.svg" alt="Salesforce" className="w-full h-full object-contain p-1" />
+        <img src="./salesforce.svg" alt="Salesforce" className="w-full h-full object-contain p-1" />
       </div>
     ),
     roles: [
@@ -92,7 +92,7 @@ const experiences: CompanyExperience[] = [
     layout: "grid",
     logo: (
       <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative z-10 border border-slate-100 shadow-sm">
-        <img src="/gameskraft.png" alt="Gameskraft" className="w-full h-full object-contain p-1" />
+        <img src="./gameskraft.png" alt="Gameskraft" className="w-full h-full object-contain p-1" />
       </div>
     ),
     roles: [
@@ -130,7 +130,7 @@ const experiences: CompanyExperience[] = [
     layout: "grid",
     logo: (
       <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative z-10 border border-slate-100 shadow-sm">
-        <img src="/arcesium.png" alt="Arcesium" className="w-full h-full object-contain p-1" />
+        <img src="./arcesium.png" alt="Arcesium" className="w-full h-full object-contain p-1" />
       </div>
     ),
     roles: [

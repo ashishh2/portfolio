@@ -27,8 +27,6 @@ const achievementsData = [
 ];
 
 export const Achievements = () => {
-  // Helper to determine grid columns based on number of items
-  // This prevents empty spaces if you have 3 items in a 4-col grid
   const gridMap: Record<number, string> = {
     1: "md:grid-cols-1",
     2: "md:grid-cols-2",

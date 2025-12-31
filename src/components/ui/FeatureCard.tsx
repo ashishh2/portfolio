@@ -122,7 +122,7 @@ export const FeatureCard = ({
                   className="pl-2 pr-3 py-1 flex items-center gap-1.5 text-[11px] rounded-full bg-blue-50/50 text-slate-700 border border-blue-100 font-medium group-hover:bg-blue-50 group-hover:border-blue-200 transition-colors"
                 >
                   <img
-                    src={`/technologies/${iconFile}`}
+                    src={`./technologies/${iconFile}`}
                     alt={tag}
                     className="w-3.5 h-3.5 object-contain"
                   />
