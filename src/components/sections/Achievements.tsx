@@ -1,36 +1,43 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Trophy, Calendar, Target, Zap, Award } from 'lucide-react';
+import { Trophy, Calendar, Zap, Award } from 'lucide-react';
 
 const stats = [
-  { label: "Years Experience", value: "4+", icon: <Calendar size={24} className="text-brand-blue" /> },
-  { label: "Patents Filed", value: "2", icon: <Zap size={24} className="text-yellow-500" /> },
-  { label: "System Uptime", value: "99.9%", icon: <Target size={24} className="text-green-600" /> },
-  { label: "Users Impacted", value: "1M+", icon: <Award size={24} className="text-brand-cyan" /> },
+  { label: "Years Experience", value: "2+", icon: <Calendar size={24} className="text-brand-blue" /> },
+  { label: "Projects Delivered", value: "15+", icon: <Zap size={24} className="text-yellow-500" /> },
+  { label: "ICPC Regionalist", value: "5x", icon: <Award size={24} className="text-brand-cyan" /> },
 ];
 
 const achievementsData = [
   {
-    title: "Salesforce Innovation Award",
-    category: "Workplace Excellence",
-    year: "2024",
-    description: "Recognized for architecting the 'Einstein' generative response module, reducing agent response times by 40%."
+    title: "ACM ICPC Asia West Regionals",
+    category: "Competitive Programming",
+    description: "Secured All India Rank 22 at the ACM ICPC Kanpur Regionals."
   },
   {
-    title: "Best Research Paper",
-    category: "Academic",
-    year: "2022",
-    description: "Awarded at IEEE International Conference for research on 'Optimizing Distributed Cache Coherence in Microservices'."
+    title: "Topcoder Open",
+    category: "Competitive Programming",
+    description: "Qualified as a Finalist for Southern Asia in Topcoder Open."
   },
   {
-    title: "Hackathon Winner",
-    category: "Competition",
-    year: "2021",
-    description: "First place in Global FinTech Hackathon for building a real-time fraud detection system using graph neural networks."
+    title: "Hacking Vishwa",
+    category: "Hackathon",
+    description: "Ranked 4th at 'Hacking Vishwa' during OJASS (NIT Jamshedpur's Technical Fest)."
   }
 ];
 
 export const Achievements = () => {
+  // Helper to determine grid columns based on number of items
+  // This prevents empty spaces if you have 3 items in a 4-col grid
+  const gridMap: Record<number, string> = {
+    1: "md:grid-cols-1",
+    2: "md:grid-cols-2",
+    3: "md:grid-cols-3",
+    4: "md:grid-cols-4",
+  };
+  
+  const gridClass = gridMap[stats.length] || "md:grid-cols-3";
+
   return (
     <section 
       id="achievements" 
@@ -55,8 +62,8 @@ export const Achievements = () => {
           Achievements
         </motion.h2>
 
-        {/* Key Metrics Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        {/* Key Metrics Grid - AUTO SIZING */}
+        <div className={`grid grid-cols-2 ${gridClass} gap-6 mb-16`}>
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -64,9 +71,9 @@ export const Achievements = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white p-6 rounded-xl text-center border border-blue-100 shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="bg-white p-6 rounded-xl text-center border border-blue-100 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center h-full"
             >
-              <div className="flex justify-center mb-4 bg-blue-50 w-12 h-12 rounded-full items-center mx-auto border border-blue-100">
+              <div className="flex justify-center mb-4 bg-blue-50 w-12 h-12 rounded-full items-center border border-blue-100">
                 {stat.icon}
               </div>
               <div className="text-3xl font-bold text-slate-900 mb-1">{stat.value}</div>
@@ -84,17 +91,13 @@ export const Achievements = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 + (index * 0.1) }}
-              // FIX 1: Darkened border-slate-200 to border-slate-300
               className="relative pl-8 border-l-2 border-slate-300 hover:border-brand-blue transition-colors duration-300 group"
             >
               {/* Timeline Dot */}
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-2 border-slate-300 group-hover:border-brand-blue transition-colors duration-300"></div>
               
               <div className="flex justify-between items-center mb-2">
-                {/* FIX 2: Darkened Text (text-blue-700) */}
                 <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">{item.category}</span>
-                {/* FIX 3: Darkened Year (text-slate-600) */}
-                <span className="text-xs text-slate-600 font-mono">{item.year}</span>
               </div>
               
               <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-blue transition-colors">

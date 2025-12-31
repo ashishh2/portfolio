@@ -56,9 +56,9 @@ const experiences: CompanyExperience[] = [
             },
             {
                 title: "Intelligent Signal Extraction and AI Agent Actions",
-                category: "Prompt Engineering",
+                category: "Backend Engineering / Prompt Engineering",
                 description: "Engineered advanced ReAct and Chain-of-Thought (CoT) prompt templates to significantly reduce hallucinations while accurately extracting high-value signals like sentiment and contact reasons. Building on this foundation, I developed AgentForce Actions to drive automated case resolution and intelligent product description enhancement. To maximize business value, I extended platform extensibility, enabling customers to define and extract custom signals, persisting them as structured JSON within Data Cloud DMOs.",
-                tags: ["Java", "Spring Boot", "Prompt Engineering", "LLM"],
+                tags: ["Java", "Spring Boot", "Data Cloud", "LLM"],
                 icon: <Bot size={20} />
             },
         ]

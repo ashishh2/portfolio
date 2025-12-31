@@ -18,11 +18,7 @@ export const Hero = () => {
     >
         {/* BACKGROUND BLOBS */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-            {/* Blob 1: Top Right */}
             <div className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full bg-blue-100/60 blur-[80px] md:blur-[100px]" />
-            
-            {/* FIX: Adjusted for Mobile to prevent hard cutoff at bottom */}
-            {/* Mobile: Top 20%, Smaller (300px) | Desktop: Top 40%, Larger (500px) */}
             <div className="absolute top-[20%] left-[-10%] w-[300px] h-[300px] md:top-[40%] md:left-[-10%] md:w-[500px] md:h-[500px] rounded-full bg-cyan-100/60 blur-[80px] md:blur-[100px]" />
         </div>
 
@@ -40,7 +36,7 @@ export const Hero = () => {
 
                     <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-[6px] border-white shadow-2xl overflow-hidden bg-slate-100">
                          <img
-                            src="/profile.jpg"
+                            src="/profile.jpeg"
                             alt="Profile"
                             className="w-full h-full object-cover"
                          />
@@ -48,9 +44,9 @@ export const Hero = () => {
 
                     <div className="flex justify-center gap-4 mt-8 relative z-20">
                          {[
-                            { icon: <Github size={20} />, href: "https://github.com/yourusername" },
-                            { icon: <Linkedin size={20} />, href: "https://linkedin.com/in/yourusername" },
-                            { icon: <Mail size={20} />, href: "mailto:your.email@example.com" }
+                            { icon: <Github size={20} />, href: "https://github.com/ashishh2" },
+                            { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/ashishh2/" },
+                            { icon: <Mail size={20} />, href: "mailto:aashishh081@gmail.com" }
                          ].map((social, index) => (
                             <motion.a
                                 key={index}
@@ -81,7 +77,7 @@ export const Hero = () => {
                     </h1>
 
                     <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 font-light">
-                        Specializing in distributed systems, high-throughput microservices, and robust cloud infrastructure. Currently focused on building resilient <strong className="text-slate-900 font-semibold">AI platforms</strong> that scale to millions of users.
+                        Specializing at the intersection of Distributed Systems and Generative AI. I engineer high-throughput, event-driven systems designed to perform reliably at scale.
                     </p>
                 </motion.div>
             </div>

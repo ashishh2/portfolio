@@ -36,8 +36,8 @@ export const Contact = () => {
                 </h2>
                 
                 <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
-                    Currently open to new opportunities in backend engineering and system architecture. 
-                    Feel free to reach out directly via email or social media.
+                    Always happy to chat about Backend Engineering, System Architecture, and Applied Generative AI. 
+                    Feel free to reach out directly via email or linkedin.
                 </p>
             </motion.div>
 
@@ -52,7 +52,7 @@ export const Contact = () => {
                 <div className="flex gap-6">
                     {/* Github */}
                     <a 
-                        href="https://github.com" 
+                        href="https://github.com/ashishh2" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="p-4 bg-white rounded-full text-slate-600 shadow-md border border-slate-100 hover:text-blue-600 hover:border-blue-100 hover:-translate-y-1 transition-all duration-300"
@@ -63,7 +63,7 @@ export const Contact = () => {
                     
                     {/* LinkedIn */}
                     <a 
-                        href="https://linkedin.com" 
+                        href="https://www.linkedin.com/in/ashishh2/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="p-4 bg-white rounded-full text-slate-600 shadow-md border border-slate-100 hover:text-blue-600 hover:border-blue-100 hover:-translate-y-1 transition-all duration-300"
@@ -74,7 +74,7 @@ export const Contact = () => {
                     
                     {/* Email */}
                     <a 
-                        href="mailto:hello@email.com" 
+                        href="mailto:aashishh081@gmail.com" 
                         className="p-4 bg-white rounded-full text-slate-600 shadow-md border border-slate-100 hover:text-blue-600 hover:border-blue-100 hover:-translate-y-1 transition-all duration-300"
                         aria-label="Email"
                     >

@@ -1,6 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
-import { Experience } from "@/components/sections/Experience";
-import { Education } from "@/components/sections/Education"; // Import
+import { Education } from "@/components/sections/Education";
 import { Projects } from "@/components/sections/Projects";
 import { Achievements } from "@/components/sections/Achievements";
 import { Contact } from "@/components/sections/Contact";
@@ -12,7 +11,7 @@ export default function Home() {
     <div className="relative pb-24">
       <Hero />
       <ExperienceV2 />
-      <Education /> {/* MOVED UP: Now sits between Experience and Projects */}
+      <Education />
       <Projects />
       <Achievements />
       <Contact />
