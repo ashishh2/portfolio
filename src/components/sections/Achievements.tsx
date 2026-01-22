@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Trophy, Calendar, Zap, Award } from 'lucide-react';
 
 const stats = [
-  { label: "Years Experience", value: "2+", icon: <Calendar size={24} className="text-brand-blue" /> },
+  { label: "Years Experience", value: "3+", icon: <Calendar size={24} className="text-brand-blue" /> },
   { label: "Projects Delivered", value: "15+", icon: <Zap size={24} className="text-yellow-500" /> },
   { label: "ICPC Regionalist", value: "5x", icon: <Award size={24} className="text-brand-cyan" /> },
 ];
