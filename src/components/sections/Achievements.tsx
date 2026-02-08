@@ -86,7 +86,7 @@ export const Achievements = () => {
         </div>
 
         {/* Detailed Achievements List */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           {achievementsData.map((item, index) => (
             <motion.div
               key={index}
