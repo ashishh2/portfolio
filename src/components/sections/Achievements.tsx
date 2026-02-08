@@ -23,6 +23,11 @@ const achievementsData = [
     title: "Hacking Vishwa",
     category: "Hackathon",
     description: "Ranked 4th at 'Hacking Vishwa' during OJASS (NIT Jamshedpur's Technical Fest)."
+  },
+  {
+    title: "Salesforce Astro Award",
+    category: "Professional Recognition",
+    description: "Awarded for delivering high-performance solutions with significant customer impact."
   }
 ];
 
