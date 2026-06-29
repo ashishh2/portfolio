@@ -12,7 +12,7 @@ const achievementsData = [
   {
     title: "ACM ICPC Asia West Regionals",
     category: "Competitive Programming",
-    description: "Secured All India Rank 22 at the ACM ICPC Kanpur Regionals."
+    description: "Secured All India Rank 22 at the ACM ICPC Kanpur Regionals and represented institute five-times at ICPC Regionals."
   },
   {
     title: "Topcoder Open",
@@ -66,7 +66,7 @@ export const Achievements = () => {
         </motion.h2>
 
         {/* Key Metrics Grid - AUTO SIZING */}
-        <div className={`grid grid-cols-2 ${gridClass} gap-6 mb-16`}>
+        {/* <div className={`grid grid-cols-2 ${gridClass} gap-6 mb-16`}>
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -83,7 +83,7 @@ export const Achievements = () => {
               <div className="text-sm text-slate-500 uppercase tracking-wider font-medium">{stat.label}</div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
         {/* Detailed Achievements List */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
