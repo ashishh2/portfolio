@@ -77,7 +77,7 @@ export const Hero = () => {
                     </h1>
 
                     <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 font-light">
-                        Specializing at the intersection of Distributed Systems and Generative AI. I engineer high-throughput, event-driven systems designed to perform reliably at scale.
+                        With over 3 years of experience specializing at the intersection of Distributed Systems and Generative AI, I engineer high-throughput, event-driven systems designed to perform reliably at scale.
                     </p>
                 </motion.div>
             </div>

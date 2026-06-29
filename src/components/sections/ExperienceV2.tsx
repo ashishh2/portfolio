@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, Code2, Cpu, Brain, Database, Layout, Bot, ChartArea } from 'lucide-react';
+import { Briefcase, Calendar, Code2, Cpu, Brain, Database, Layout, Bot, ChartArea, Gauge, AudioWaveform } from 'lucide-react';
 import { FeatureCard, Feature } from '../ui/FeatureCard';
 
 interface Role {
@@ -34,16 +34,30 @@ const experiences: CompanyExperience[] = [
         period: "Feb 2025 - Present",
         features: [
             {
+                title: "High-Scale Distributed Systems",
+                category: "Distributed Systems",
+                description: "Scaled a core Kafka microservice from 35M to 300M+ daily messages, an 8.5x increase in throughput, by diagnosing and resolving a critical memory leak that was throttling sustained load. I tuned listener and consumer configurations for high-volume ingestion and introduced non-blocking async workflows via CompletableFuture, eliminating thread-blocking bottlenecks and substantially improving overall pipeline throughput and reliability.",
+                tags: ["Java", "Spring Boot", "Kafka", "Kubernetes", "Grafana", "DynamoDB", "Redis"],
+                icon: <Gauge size={20} />
+            },
+            {
+                title: "Real-Time Stream Processing",
+                category: "Distributed Systems / Gen AI",
+                description: "Built a live sentiment extraction engine for messaging and voice sessions on the Salesforce Actor-Runtime (Apache Pekko), reliably processing 1M+ events per day. I leveraged the actor model to manage stateful, concurrent stream processing at scale and instrumented the system with end-to-end observability, ensuring fault tolerance and real-time visibility into the full processing lifecycle.",
+                tags: ["Java", "Apache Pekko", "Actor Model", "DynamoDB", "Grafana"],
+                icon: <AudioWaveform size={20} />
+            },
+            {
                 title: "Data Kit Deployment Orchestration",
                 category: "Backend Engineering",
                 description: "Re-architected the Data Kit Deployment Orchestration Workflow, transitioning from a resource-intensive polling model to a scalable event-driven architecture. To enhance maintainability, I designed a task registry leveraging the Strategy Pattern, allowing for modular execution of post-deployment logic. This modernization drastically optimized system performance, reducing API overhead by 40x and accelerating notification delivery speeds by 97.5%.",
-                tags: ["Java", "Spring Boot", "PostgreSQL"],
+                tags: ["Java", "Spring Boot", "PostgreSQL", "Event-Driven Systems"],
                 icon: <Cpu size={20} />
             },
             {
                 title: "Semantic Clustering (HDBSCAN)",
                 category: "Machine Learning",
-                description: "Engineered a scalable clustering and labeling pipeline integrated directly into Data Cloud via Spark UDFs. This solution semantically groups complex contact reasons and generates descriptive labels for each cluster, exposing advanced logic through standard Data Transforms. This architecture directly bridged the gap between raw data and actionable product analytics.",
+                description: "Developed an unsupervised ML feature that combines vector embeddings with HDBSCAN to semantically cluster millions of unstructured customer contact reasons, directly powering Service Cloud analytics. I engineered a scalable clustering and labeling pipeline integrated into Data Cloud via Spark UDFs, generating descriptive labels for each cluster and exposing the advanced logic through standard Data Transforms. This architecture bridged the gap between raw, high-volume data and actionable product analytics.",
                 tags: ["AWS S3", "Java", "Python", "Spark", "Bazel", "Embeddings", "Prompt Engineering"],
                 icon: <Brain size={20} />
             },

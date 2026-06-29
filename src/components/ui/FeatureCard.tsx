@@ -33,7 +33,9 @@ const techIcons: Record<string, string> = {
   "Protobuf": "protobuf.svg",
   "AgentForce": "agentforce.png",
   "NumPy": "numpy.svg",
-  "Scikit-learn": "scikit-learn.svg"
+  "Scikit-learn": "scikit-learn.svg",
+  "DynamoDB": "dynamodb.svg",
+  "Apache Pekko": "pekko.png"
 };
 
 // --- SHARED INTERFACE ---
